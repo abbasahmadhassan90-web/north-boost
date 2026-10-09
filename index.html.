@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>North Boost</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f1f5f9;margin:0;color:#172033}
+header{background:#102a43;color:white;padding:24px 16px;text-align:center}
+header h1{margin:0;font-size:30px}
+header p{margin-bottom:0}
+main{max-width:600px;margin:24px auto;padding:16px}
+.card{background:white;padding:22px;border-radius:14px;box-shadow:0 4px 15px #0001}
+label{display:block;margin-top:16px;font-weight:bold}
+input,select,button{width:100%;padding:13px;margin-top:7px;box-sizing:border-box;border:1px solid #ccd5e0;border-radius:8px;font-size:16px}
+button{background:#087f5b;color:white;border:0;font-weight:bold;margin-top:20px}
+.note{background:#fff3cd;padding:12px;border-radius:8px;font-size:14px}
+footer{text-align:center;padding:24px;color:#64748b}
+</style>
+</head>
+<body>
+<header>
+<h1>North Boost</h1>
+<p>Grow your social media presence</p>
+</header>
+<main>
+<div class="card">
+<h2>Create a Campaign</h2>
+<p>Prepare your social media promotion request.</p>
+<form id="campaign">
+<label for="platform">Choose platform</label>
+<select id="platform" required>
+<option value="">Select platform</option>
+<option>Facebook</option>
+<option>TikTok</option>
+<option>Instagram</option>
+<option>YouTube</option>
+</select>
+<label for="service">Campaign type</label>
+<select id="service" required>
+<option value="">Select campaign</option>
+<option>Promote a post</option>
+<option>Promote a video</option>
+<option>Reach genuine interested audiences</option>
+</select>
+<label for="link">Public post or video link</label>
+<input id="link" type="url" placeholder="https://..." required>
+<label for="budget">Campaign budget (₦)</label>
+<input id="budget" type="number" min="100" placeholder="e.g. 1000" required>
+<button type="submit">Preview Campaign</button>
+</form>
+<p id="result"></p>
+<p class="note">Demo only: this page does not accept payments or deliver likes, followers, or views. Campaigns must use genuine audiences and comply with each platform's rules.</p>
+</div>
+</main>
+<footer>North Boost · Built for growth</footer>
+<script>
+document.getElementById('campaign').addEventListener('submit',function(e){
+e.preventDefault();
+document.getElementById('result').textContent=
+'Preview ready: '+document.getElementById('platform').value+
+' — '+document.getElementById('service').value+
+'. Budget: ₦'+document.getElementById('budget').value+
+'. No order has been placed.';
+});
+</script>
+</body>
+</html>
